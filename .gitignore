@@ -127,6 +127,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+rtacls/*
 
 # Spyder project settings
 .spyderproject
