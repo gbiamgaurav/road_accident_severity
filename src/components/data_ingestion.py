@@ -26,6 +26,41 @@ class DataIngestion:
             df = df.drop(columns=['Time'], axis=1)
             logging.info("Read the dataset as dataframe")
             
+            # renaming the columns
+            df = df.rename(columns={
+                'Day_of_week': 'weekday', 
+                'Age_band_of_driver': 'driver_age', 
+                'Sex_of_driver': 'driver_sex',
+                'Educational_level': 'educational_level', 
+                'Vehicle_driver_relation': 'driver_relation', 
+                'Driving_experience': 'driving_exp',
+                'Type_of_vehicle': 'vehicle_type', 
+                'Owner_of_vehicle': 'vehicle_owner',
+                'Service_year_of_vehicle': 'service_year',
+                'Defect_of_vehicle': 'vehicle_defect', 
+                'Area_accident_occured': 'accident_area', 
+                'Lanes_or_Medians': 'lanes',
+                'Road_allignment': 'road_alignment',
+                'Types_of_Junction': 'junction_type',
+                'Road_surface_type': 'road_type',
+                'Road_surface_conditions': 'road_conditions', 
+                'Light_conditions': 'light_condition', 
+                'Weather_conditions': 'weather_condition',
+                'Type_of_collision': 'collision_type', 
+                'Number_of_vehicles_involved': 'num_of_vehicles',
+                'Number_of_casualties': 'casualty', 
+                'Vehicle_movement': 'vehicle_movement', 
+                'Casualty_class': 'casualty_class',
+                'Sex_of_casualty': 'casualty_sex', 
+                'Age_band_of_casualty': 'casualty_age',
+                'Casualty_severity': 'casualty_severity',
+                'Work_of_casuality': 'casualty_work', 
+                'Fitness_of_casuality': 'casualty_fitness', 
+                'Pedestrian_movement': 'pedestrian_movement',
+                'Cause_of_accident': 'accident_cause', 
+                'Accident_severity': 'accident_severity'}
+)
+            
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path), exist_ok=True)
             
             df.to_csv(self.ingestion_config.raw_data_path, index=False, header=True)
