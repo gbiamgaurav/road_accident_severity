@@ -11,6 +11,9 @@ from dataclasses import dataclass
 from src.components.data_transformation import DataTransformationConfig, DataTransformation
 from src.components.model_trainer import ModelTrainerConfig, ModelTrainer
 
+import warnings
+warnings.filterwarnings("ignore")
+
 
 class DataIngestionConfig:
     train_data_path: str = os.path.join('artifacts', 'train.csv')
