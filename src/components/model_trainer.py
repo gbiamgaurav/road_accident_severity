@@ -47,30 +47,15 @@ class ModelTrainer:
                 test_array[:, -1]
             )
             
+            # We will choose the top 3 models found in EDA
 
             models = {
-                "RandomForest": RandomForestClassifier(),
-                "LogisticRegression": LogisticRegression(),
-                "DecisionTree": DecisionTreeClassifier(),
                 "GradientBoosting": GradientBoostingClassifier(),
                 "XGBClassifier": XGBClassifier(),
-                "CatboostClassifier": CatBoostClassifier(),
-                "AdaboostClassifier": AdaBoostClassifier(),
                 "ExtratreeClassifier": ExtraTreesClassifier()
             }
             
-            params = {
-                "DecisionTree": {
-                    'criterion': ['entropy', 'gini', 'log_loss'],
-                    'splitter': ['best', 'random'],
-                    'max_features': ['sqrt', 'log2'], 
-                },
-                "RandomForest":{
-                    'criterion': ['gini', 'log_loss', 'entropy'],
-                    'max_features': ['sqrt', 'log2', None],
-                    'n_estimators': [8,16,32,64,128,256]
-                },
-                "GradientBoosting":{
+            params ={"GradientBoosting":{
                     'loss':['exponential', 'log_loss', 'deviance'],
                     'learning_rate':[.1,.01,.05,.001],
                     'subsample':[0.6,0.7,0.75,0.8,0.85,0.9],
@@ -78,32 +63,16 @@ class ModelTrainer:
                     'max_features':['auto','sqrt','log2'],
                     'n_estimators': [8,16,32,64,128,256]
                 },
-                "LogisticRegression":{
-                    'penalty': ['l1', 'l2'], 
-                    'C': [0.001, 0.01, 0.1, 1, 10, 100, 1000],
-                    'solver': ['liblinear', 'saga']},
                 
                 "XGBClassifier":{
                     'learning_rate':[.1,.01,.05,.001],
-                    'n_estimators': [8,16,32,64,128,256]
-                },
-                "CatboostClassifier":{
-                    'learning_rate': [0.01, 0.05, 0.1],
-                    'depth': [6,8,10],
-                    'iterations': [30, 50, 100]
-                },
-                "AdaboostClassifier":{
-                    'learning_rate':[.1,.01,0.5,.001],
-                    'loss':['linear','square','exponential'],
-                    'n_estimators': [8,16,32,64,128,256]
-                },
+                    'n_estimators': [8,16,32,64,128,256]},
+                
                 "ExtraTreesClassifier": {
                     'criterion': ['gini', 'entropy'],
                     'max_features': ['sqrt', 'log2', None],
                     'n_estimators': [8,16,32,64,128,256]
-                }
-            }
-            
+                }}
             
             
             model_report: dict=evaluate_models(X_train=X_train, y_train=y_train, X_test=X_test, y_test=y_test,
