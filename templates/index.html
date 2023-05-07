@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Accident Severity Prediction App</title>
+    </head>
+    <body>
+        <h1 style='text-align: center;'>Accident Severity Prediction App 🚧</h1>
+        <form method="POST" action="/predict">
+            <label>Day of the week:</label>
+            <select name="day">
+                {% for day in options_day %}
+                    <option value

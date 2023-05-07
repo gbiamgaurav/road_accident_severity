@@ -1,8 +1,5 @@
-pandas
-numpy
 seaborn
 matplotlib
-scikit-learn
 imblearn
 dill
 xgboost
@@ -10,7 +7,12 @@ catboost
 joblib
 notebook
 ipykernel
-streamlit
-shap
 sqlite-utils
+Flask
+intel-openmp
+numpy
+pandas
+scikit-learn
+
+
 -e .
