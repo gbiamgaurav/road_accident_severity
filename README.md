@@ -24,3 +24,5 @@ This is a multiclass classification project to classify severity of road acciden
 
 `streamlit run app.py`
 
+**app**: [find the app here](http://accidentseverity-env.eba-9zrk9m6h.us-east-1.elasticbeanstalk.com/)
+
