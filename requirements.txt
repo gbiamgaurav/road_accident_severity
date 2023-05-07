@@ -13,6 +13,6 @@ intel-openmp
 numpy
 pandas
 scikit-learn
+streamlit
 
-
--e .
+#-e .
