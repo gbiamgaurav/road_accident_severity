@@ -9,3 +9,18 @@ This is a multiclass classification project to classify severity of road acciden
 
 **Problem Statement**: The target feature is Accident_severity which is a multi-class variable. The task is to classify this variable based on the other 31 features step-by-step by going through each day's task. Your metric for evaluation will be f1-score.
 
+
+## Steps 
+
+1. Create environment
+
+`conda create -p rtacls python==3.8 -y`
+
+2. Run setup.py and install requirements.txt
+
+`pip install -r requirements.txt`
+
+3. To run the app
+
+`streamlit run app.py`
+
