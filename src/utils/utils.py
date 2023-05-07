@@ -39,7 +39,7 @@ def evaluate_models(X_train, y_train, X_test, y_test, models, params):
             else:
                 parameters = params[model_name]
             
-            gs = GridSearchCV(model, parameters, cv=3)
+            gs = GridSearchCV(model, parameters)
             
             gs.fit(X_train, y_train)
             

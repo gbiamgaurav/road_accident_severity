@@ -10,4 +10,7 @@ catboost
 joblib
 notebook
 ipykernel
+streamlit
+shap
+sqlite-utils
 -e .
